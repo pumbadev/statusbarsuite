@@ -3,11 +3,12 @@
 
 @interface StatusBarSuite : NSObject
 -(void)prefsChanged;
-
+-(BOOL)isEnabled:(NSString *)enabledKey;
 @end
 
 @implementation StatusBarSuite
 -(void)prefsChanged {
+
 	// reload prefs
 	
 	if (prefs) {
@@ -22,19 +23,20 @@
 static NSDictionary *prefs = nil;
 static StatusBarSuite *statusBarSuite = nil;
 
-static BOOL batteryEnabled(void) {
-	return (prefs) ? [prefs[@"hideBattery"] boolValue] : NO; 
-}
-static BOOL carrierEnabled(void) {
-	return (prefs) ? [prefs[@"hideCarrier"] boolValue] : NO; 
+-(BOOL)isEnabled:(NSString *)enabledKey {
+
+	return (prefs) ?[prefs[enabledKey]boolValue] :NO;
+
+
 }
 
 @end
+
 %hook UIStatusBarBatteryItemView
 
 + (id)itemWithType:(int)arg1 idiom:(int)arg2 {
 
-	if (batteryEnabled()) {
+	if ([statusBarSuite isEnabled:@"hideBattery"]) {
 		return nil;
 	}
 	else {
@@ -43,8 +45,8 @@ static BOOL carrierEnabled(void) {
 }
 
 - (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
-	if (batteryEnabled()) {
-	return nil;
+	if ([statusBarSuite isEnabled:@"hideBattery"]) {
+		return nil;
 	}
 	
 	else {
@@ -53,7 +55,7 @@ static BOOL carrierEnabled(void) {
 }
 
 - (id)initWithType:(int)arg1 {
-	if (batteryEnabled()) {
+	if ([statusBarSuite isEnabled:@"hideBattery"]) {
 		return nil;
 	}
 	else {
@@ -61,7 +63,7 @@ static BOOL carrierEnabled(void) {
 	}
 }
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
-	if (batteryEnabled()) {
+	if ([statusBarSuite isEnabled:@"hideBattery"]) {
 		return nil;
 	}
 	else {
@@ -76,7 +78,7 @@ static BOOL carrierEnabled(void) {
 
 + (id)itemWithType:(int)arg1 idiom:(int)arg2 {
 
-	if (carrierEnabled()) {
+	if ([statusBarSuite isEnabled:@"hideCarrier"]) {
 		return nil;
 	}
 	else {
@@ -85,8 +87,8 @@ static BOOL carrierEnabled(void) {
 }
 
 - (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
-	if (carrierEnabled()) {
-	return nil;
+	if ([statusBarSuite isEnabled:@"hideCarrier"]) {
+		return nil;
 	}
 	
 	else {
@@ -95,7 +97,7 @@ static BOOL carrierEnabled(void) {
 }
 
 - (id)initWithType:(int)arg1 {
-	if (carrierEnabled()) {
+	if ([statusBarSuite isEnabled:@"hideCarrier"]) {
 		return nil;
 	}
 	else {
@@ -103,7 +105,7 @@ static BOOL carrierEnabled(void) {
 	}
 }
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
-	if (carrierEnabled()) {
+	if ([statusBarSuite isEnabled:@"hideCarrier"]) {
 		return nil;
 	}
 	else {
