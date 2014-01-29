@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = StatusBarSuitePrefs;
+	cell = PSLinkCell;
+	detail = StatusBarSuitePrefsListController;
+	icon = StatusBarSuitePrefs.png;
+	isController = 1;
+	label = StatusBarSuitePrefs;
+    };
+}

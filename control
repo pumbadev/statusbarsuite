@@ -1,0 +1,9 @@
+Package: com.pumba.statusbarsuite
+Name: StatusBarSuite
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Pumba
+Author: Pumba
+Section: Tweaks
