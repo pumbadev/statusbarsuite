@@ -115,6 +115,88 @@ static StatusBarSuite *statusBarSuite = nil;
 
 %end
 
+%hook UIStatusBarTimeItemView
+
++ (id)itemWithType:(int)arg1 idiom:(int)arg2 {
+
+	if ([statusBarSuite isEnabled:@"hideTime"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideTime"]) {
+		return nil;
+	}
+	
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithType:(int)arg1 {
+	if ([statusBarSuite isEnabled:@"hideTime"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
++ (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideTime"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+
+%end
+%hook UIStatusBarBluetoothItemView
+
++ (id)itemWithType:(int)arg1 idiom:(int)arg2 {
+
+	if ([statusBarSuite isEnabled:@"hideBluetooth"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideBluetooth"]) {
+		return nil;
+	}
+	
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithType:(int)arg1 {
+	if ([statusBarSuite isEnabled:@"hideBluetooth"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
++ (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideBluetooth"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+
+%end
 
 %ctor {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
