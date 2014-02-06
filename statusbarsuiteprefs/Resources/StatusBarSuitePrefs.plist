@@ -60,8 +60,56 @@
 			<key>PostNotification</key>
 			<string>com.pumba.statusbarsuite.prefs-changed</string>
 		</dict>
+			<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideBluetoothBattery</string>
+			<key>label</key>
+			<string>Hide Bluetooth Battery</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+		</dict>
+			<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideNetworkWifi</string>
+			<key>label</key>
+			<string>Hide LTE/WiFi</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+			</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideSignalDots</string>
+			<key>label</key>
+			<string>Hide Signal Dots</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+		</dict>
+			<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Developed by Pumba - RIP Teddy "LyriX"</string>
+		</dict>
 	</array>
 	<key>title</key>
-	<string>SBS Preferences</string>
+	<string>SBS Prefs</string>
 </dict>
 </plist>
