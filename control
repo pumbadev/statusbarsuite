@@ -3,7 +3,7 @@ Name: StatusBarSuite
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
-Maintainer: Pumba
+Description: Hide/Show most icons on your StatusBar with StatusBarSuite!
+Maintainer: Pumba <chumeet@gmail.com>
 Author: Pumba
 Section: Tweaks
