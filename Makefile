@@ -1,7 +1,12 @@
-include theos/makefiles/common.mk
+export ARCHS = armv7 arm64
+export SDKVERSION = 7.0
+
+
+include /opt/theos/makefiles/common.mk
 
 TWEAK_NAME = StatusBarSuite
 StatusBarSuite_FILES = Tweak.xm
+
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

@@ -329,6 +329,190 @@ static StatusBarSuite *statusBarSuite = nil;
 }
 %end
 
+#pragma mark Alarm/Rotation
+%hook UIStatusBarIndicatorItemView
+
++ (id)itemWithType:(int)arg1 idiom:(int)arg2 {
+
+	if ([statusBarSuite isEnabled:@"hideIndicator"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideIndicator"]) {
+		return nil;
+	}
+	
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithType:(int)arg1 {
+	if ([statusBarSuite isEnabled:@"hideIndicator"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
++ (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideIndicator"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+%end
+
+
+#pragma mark Status Bar
+%hook UIStatusBarViewController
+
+- (id)window {
+	if ([statusBarSuite isEnabled:@"hideStatusBar"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+
+}
+
+- (id)init {
+	if ([statusBarSuite isEnabled:@"hideStatusBar"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+%end
+
+%hook UIStatusBarWindow
+
+- (id)init {
+	if ([statusBarSuite isEnabled:@"hideStatusBar"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+
+}
+
+- (void)setStatusBar:(id)arg1{
+	if ([statusBarSuite isEnabled:@"hideStatusBar"]) {
+		%orig(nil);
+	}
+	else {
+		%orig;
+	}
+}
+%end
+
+%hook UIStatusBar
+- (id)init {
+	if ([statusBarSuite isEnabled:@"hideStatusBar"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+
+}
+%end
+
+
+#pragma mark Airplane
+%hook UIStatusBarAirplaneModeItemView
+
++ (id)itemWithType:(int)arg1 idiom:(int)arg2 {
+
+	if ([statusBarSuite isEnabled:@"hideAirplane"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideAirplane"]) {
+		return nil;
+	}
+	
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithType:(int)arg1 {
+	if ([statusBarSuite isEnabled:@"hideAirplane"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
++ (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideAirplane"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+%end
+
+
+
+#pragma mark Quiet Mode
+%hook UIStatusBarQuietModeItemView
+
++ (id)itemWithType:(int)arg1 idiom:(int)arg2 {
+
+	if ([statusBarSuite isEnabled:@"hideQuietMode"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideQuietMode"]) {
+		return nil;
+	}
+	
+	else {
+	return %orig;
+	}
+}
+
+- (id)initWithType:(int)arg1 {
+	if ([statusBarSuite isEnabled:@"hideQuietMode"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
++ (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4 {
+	if ([statusBarSuite isEnabled:@"hideQuietMode"]) {
+		return nil;
+	}
+	else {
+	return %orig;
+	}
+}
+%end
+
 
 #pragma mark Setup
 %ctor {

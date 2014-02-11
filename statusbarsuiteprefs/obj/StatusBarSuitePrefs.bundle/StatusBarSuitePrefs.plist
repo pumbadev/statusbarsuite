@@ -102,11 +102,75 @@
 			<key>PostNotification</key>
 			<string>com.pumba.statusbarsuite.prefs-changed</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideIndicator</string>
+			<key>label</key>
+			<string>Hide Alarm/Rotation</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideAirplane</string>
+			<key>label</key>
+			<string>Hide Airplane</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideQuietMode</string>
+			<key>label</key>
+			<string>Hide DND</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.pumba.statusbarsuite</string>
+			<key>key</key>
+			<string>hideStatusBar</string>
+			<key>label</key>
+			<string>Hide Status Bar</string>
+			<key>PostNotification</key>
+			<string>com.pumba.statusbarsuite.prefs-changed</string>
+		</dict>
 			<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
 			<string>Developed by Pumba - RIP Teddy "LyriX"</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSStaticTextCell</string>
+			<key>action</key>
+			<string>respring</string>
+			<key>label</key>
+			<string>Respring Device</string>
 		</dict>
 	</array>
 	<key>title</key>

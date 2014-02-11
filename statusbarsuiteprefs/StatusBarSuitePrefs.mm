@@ -16,6 +16,12 @@
 	}
 	return _specifiers;
 }
+
+-(void)respring {
+
+	system("killall SpringBoard");
+
+}
 @end
 
 // vim:ft=objc
